@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozenera Presents!</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+            /* Import Goku Font */
+    @font-face {
+        font-family: 'FonterGoku';
+        src: url('fonts/FonterGoku.woff2') format('woff2'),
+             url('fonts/FonterGoku.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .main-title {
+        font-family: 'FonterGoku', sans-serif; /* Goku font */
+        font-size: 42px; /* Standard size */
+        color: #0f0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid #0f0; /* Cursor effect */
+        display: inline-block;
+        animation: typing 3s steps(15) 1s 1 normal both, blink 0.75s step-end infinite alternate;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+        body {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #0f0;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: floatParticles 10s infinite linear;
+        }
+
+        @keyframes floatParticles {
+            0% { transform: translateY(0); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 30px;
+            border: 2px solid #0f0;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.7);
+            background: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 1.5s ease-in-out;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .main-title {
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #0f0;
+            letter-spacing: 2px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #0f0; }
+            100% { text-shadow: 0 0 20px #0f0; }
+        }
+
+        .subtext {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 8px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+          /* Import Comb Regular Font */
+    @font-face {
+        font-family: 'CombRegular';
+        src: url('fonts/') format('woff2'),
+             url('fonts/CombRegular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .small-text {
+        font-size: 14px;
+        font-family: 'CombRegular', sans-serif;
+        opacity: 0.8;
+        margin-right: 5px;
+    }
+
+    .price {
+        color: #0f0;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .divider {
+        margin: 0 10px;
+        font-size: 18px;
+    }
+
+    .limited-offer {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ff0;
+        margin-top: 10px;
+        animation: pulse 1.5s infinite alternate;
+    }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.05); opacity: 1; }
+        }
+    .discord-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #0f0;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s;
+    }
+
+    .discord-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px; /* Moves icon left */
+        filter: invert(64%) sepia(47%) saturate(7491%) hue-rotate(90deg) brightness(110%) contrast(108%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .discord-link:hover {
+        color: #ff0;
+    }
+
+    .discord-icon:hover {
+        transform: scale(1.2);
+    }
+
+        .arrow-down {
+            font-size: 25px;
+            color: #0f0;
+            margin-top: 10px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(8px); }
+        }
+
+        .contact-btn {
+            background: #0f0;
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .contact-btn:hover {
+            background: #0c0;
+            transform: scale(1.07);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+        }
+
+        .social-links {
+            margin-top: 20px;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .social-links a {
+            color: #0f0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff0;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+        <h1 class="main-title">Need a Website?</h1>
+        <p class="subtext">DYNAMIC | RESPONSIVE | ULTRA-FAST</p>
+
+        <div class="pricing-box">
+            <span class="small-text">Starts at</span> 
+            <span class="price">₹99</span> 
+            <span class="divider">|</span> 
+            <span class="small-text">Max</span> 
+            <span class="price">₹2K</span>
+            <span class="limited-offer">🔥 Limited Time Offer!</span>
+        </div>
+        
+        <div class="arrow-down">↓ ↓ ↓</div>
+
+        <button class="contact-btn" onclick="contactUs()">Contact Us Today!</button>
+
+
+        <p class="social-links">
+            <a href="https://discord.gg/5Phrp7e6bx" target="_blank" class="discord-link">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" 
+                     alt="Discord" class="discord-icon">
+                Join Our Discord
+            </a>
+        </p>
+        
+            </div>
+
+    <script>
+        function contactUs() {
+            let confirmJoin = confirm("Contact us at:\nClick OK to Join Discord!");
+            if (confirmJoin) {
+                window.open("https://discord.gg/5Phrp7e6bx", "_blank");
+            }
+        }
+
+        function createParticles() {
+            const bg = document.querySelector('.background');
+            for (let i = 0; i < 30; i++) {
+                let particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + "vw";
+                particle.style.top = Math.random() * 100 + "vh";
+                particle.style.animationDuration = (Math.random() * 5 + 5) + "s";
+                bg.appendChild(particle);
+            }
+        }
+        createParticles();
+    </script>
+
+</body>
+</html>
